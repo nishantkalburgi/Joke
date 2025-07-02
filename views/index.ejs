@@ -1,0 +1,56 @@
+<%- include("partials/header.ejs") %>
+<div class="main container">
+  <form action="/get-joke" method="post">
+    <h1 class="intro-header">Which type of joke do you want?</h1>
+    <div class="checkbox-1">
+
+      <span class="Category font1">Category:</span>
+      <div class="category-selector">
+      <div style="margin-left: 8px;">
+        <input type="radio" id="any" name="selector" value="Any">
+        <label class="font" for="any">Any</label>
+      </div>
+      <div class="inputs">
+      <input type="radio" id="custom" name="selector" required>
+      <label class="custom font" for="custom">Custom</label>
+      
+      <input type="checkbox" id="dark" name="jokeType[]" class="joke-type" value="Dark" disabled>
+      <label for="dark" class="font">Dark</label>
+      <input type="checkbox" id="misc" name="jokeType[]" class="joke-type" value="Miscellaneous" disabled>
+      <label for="misc" class="font">Misc</label>
+      <input type="checkbox" id="spooky" name="jokeType[]"  class="joke-type" value="Spooky" disabled>
+      <label for="spooky" class="font">Spooky</label>
+      <input type="checkbox" id="pun" name="jokeType[]" class="joke-type" value="Pun" disabled>
+      <label for="pun" class="font">Pun</label>
+      <input type="checkbox" id="christmas" name="jokeType[]" class="joke-type" value="Christmas" disabled >
+      <label for="christmas" class="font">Christmas</label>
+      </div>
+      <br>
+      </div>
+    </div>
+    <div class="checkbox-2">
+      <span class="font1">Select flags to blackist:(optional)</span>
+      <div class="checkbox-pair">
+      <input type="checkbox" id="nsfw" name="jokeBlacklist[]" value="nsfw">
+      <label for="nsfw" class="font">Nsfw</label> 
+
+      <input type="checkbox" id="religious" name="jokeBlacklist[]" value="religious">
+      <label for="religious" class="font">Religious</label>
+      <input type="checkbox" id="political" name="jokeBlacklist[]" value="political">
+      <label for="political" class="font">Political</label>
+      </div>
+      <div class="checkbox-pair">
+      <input type="checkbox" id="racist" name="jokeBlacklist[]" value="racist">
+      <label for="racist" class="font">Racist</label> 
+      <input type="checkbox" id="sexist" name="jokeBlacklist[]" value="sexist">
+      <label for="sexist" class="font">Sexist</label>
+      <input type="checkbox" id="explicit" name="jokeBlacklist[]" value="explicit" >
+      <label for="explicit" class="font">Explicit</label><br>
+</div>
+    </div>
+          <button class="submit-btn btn btn-light" type="submit">Get Joke</button>
+  </form>
+
+
+</div>
+<%- include("partials/footer.ejs")  %>
