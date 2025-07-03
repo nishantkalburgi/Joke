@@ -42,6 +42,10 @@ app.post("/get-joke", async (req, res) => {
   }
 })
 
+app.get("/get-joke",(req,res)=>{
+  res.redirect("/")
+})
+
 
 app.listen(port, () => {
   console.log(`Server running on Port ${port}`)
